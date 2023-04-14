@@ -1,0 +1,7 @@
+[
+    {"id":1, "nombre": "Show Infantil", "precio": 900, "foto": "../img/showinfantil.jpg", "cantidad":1},
+    {"id":2, "nombre": "Decoración de Globos", "precio": 400, "foto": "../img/decoracionglobos.jpg", "cantidad":1},
+    {"id":3, "nombre": "Decoración Matrimonial", "precio": 500, "foto": "../img/decomatrimonio.jpeg", "cantidad":1},
+    {"id":4, "nombre": "Show y Decoración", "precio": 1200, "foto": "../img/show+decoracion.jpeg", "cantidad":1},
+    {"id":5, "nombre": "Show de Burbujas", "precio": 450, "foto": "../img/showburbujas.jpg", "cantidad":1}
+]

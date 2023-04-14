@@ -1,0 +1,216 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Hind', sans-serif;
+}
+
+.barranav{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 10px;
+}
+.listnav{
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+
+li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+li a{
+    text-decoration: none;
+    color: #347194;
+}
+
+
+.banner{
+    height: 500px;
+}
+.btn-carrito{
+    border: none;
+    background: rgba(255, 255, 255, 0);
+}
+
+.titulo{
+    margin-top: 15px;
+    text-align: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+#listaDeServicios{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 30px;
+}
+
+.tarjeta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgb(68 68 68 / 20%);
+    padding: 5px;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.btn-add{
+    --color: #00A97F;
+    padding: 0.8em 1.7em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+   }
+   
+   .btn-add::before, .btn-add::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+   }
+   
+   .btn-add::before {
+    top: -1em;
+    left: -1em;
+   }
+   
+   .btn-add::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+   }
+   
+   .btn-add:hover::before, .btn-add:hover::after {
+    height: 410px;
+    width: 410px;
+   }
+   
+   .btn-add:hover {
+    color: rgb(255, 255, 255);
+   }
+   
+   .btn-add:active {
+    filter: brightness(.8);
+   }
+   
+  
+  @media (prefers-reduced-motion: reduce) {
+    .btn-donate {
+      transition: linear;
+    }
+  }
+  
+
+.img-tarjeta{
+    height: 200px;
+    width: 230px;
+    border-radius: 15px;
+}
+
+.modal-carrito{
+    width: 80%;
+    margin: 0 10%;
+    max-height: 88vh;
+    color: #fff;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    overflow: auto;
+    z-index: 9;
+    top: 12vh;
+    scrollbar-color: none;
+}
+
+.modal-carrito::-webkit-scrollbar{
+    display: none;
+}
+
+.modal-headercarro{
+    display: flex;
+    justify-content: space-around;
+    background-color: #0a0909;
+    color: #fff;
+    width: 100%;
+}
+
+.modal-headercarro-title{
+    justify-self: start;
+}
+
+.modal-headercarro-btn{
+    cursor: pointer;
+}
+
+.modal-carrito > .carrito-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    margin: 10px;
+}
+
+.modal-carrito > div > img{
+    height: 120px;
+    width: 120px;
+}
+
+.total-content{
+    font-size: 25px;
+    padding: 20px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.delete-servicio{
+    cursor: pointer;
+}
+
+.cantidadCarrito{
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 4px;
+    top: 37px;
+    right: 14px;
+    position: absolute;
+    display: none;
+}
+
+.sumar ,.restar{
+    cursor: pointer;
+}
