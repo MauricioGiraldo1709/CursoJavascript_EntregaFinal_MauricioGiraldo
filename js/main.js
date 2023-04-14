@@ -1,23 +1,19 @@
-const servicios = [ 
-    {id:1, nombre: 'Show Infantil', precio: 900, foto: "./img/showinfantil.jpg", cantidad:1},
-    {id:2, nombre: 'Decoración de Globos', precio: 400, foto: "./img/decoracionglobos.jpg", cantidad:1},
-    {id:3, nombre: 'Decoración Matrimonial', precio: 500, foto: "./img/decomatrimonio.jpeg", cantidad:1},
-    {id:4, nombre: 'Show y Decoración', precio: 1200, foto: "./img/show+decoracion.jpeg", cantidad:1},
-    {id:5, nombre: 'Show de Burbujas', precio: 450, foto: "./img/showburbujas.jpg", cantidad:1},
-]
+let listado = document.getElementById("listaDeServicios");
 let carrito = JSON.parse(localStorage.getItem("carrito")) || []
 let modalContainer = document.getElementById('modal-carrito')
 let verCarro = document.getElementById('ver-carrito')
 let cantidadCarrito = document.getElementById('cantidadCarrito')
 
-function listaDeServicios(){
-    for (const servicio of servicios) {
-        let tarjetaServicio = document.createElement('div')
+fetch("../json/data.json")
+.then(response => response.json())
+.then(data => {
+  data.forEach(servicio => {
+    let tarjetaServicio = document.createElement('div')
         tarjetaServicio.innerHTML = `<img src = ${servicio.foto} class = "img-tarjeta">
                                     <h3>${servicio.nombre} </h3> 
                                     <h3>$${servicio.precio}</h3>
                                     <button class="btn-add" id=${servicio.id}>Agregar al carrito</button>`
-        tarjetaServicio.className = 'tarjeta col-sm-12 col-md-3 col-lg-4'
+        tarjetaServicio.className = 'tarjeta col-sm-6 col-md-6 col-lg-4'
         let lista = document.getElementById('listaDeServicios')
         lista.append(tarjetaServicio)
         let btnAgregar = document.getElementById(`${servicio.id}`)
@@ -51,11 +47,8 @@ function listaDeServicios(){
                 guardarEnLocal()
             }
         })
-    }
-}
-
+  });
+})  
 const guardarEnLocal = () =>{
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
-
-listaDeServicios()
